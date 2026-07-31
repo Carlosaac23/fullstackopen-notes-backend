@@ -1,23 +1,35 @@
+@baseUrl = http://localhost:4000
+
 # Get notes
-GET http://localhost:4000/api/notes
+GET {{baseUrl}}/api/notes
 
 ###
 # Get note
-GET http://localhost:4000/api/notes/1
+GET {{baseUrl}}/api/notes/6a6a84750683e23cec4d5612
 
 ###
 # Create note
-POST http://localhost:4000/api/notes
+POST {{baseUrl}}/api/notes
 Content-Type: application/json
 
 {
-  "content": "Hola desde REST Client"
+  "content": "Hi",
+  "important": true
+}
+
+###
+# Update note
+PUT {{baseUrl}}/api/notes/6a6a84750683e23cec4d5612
+Content-Type: application/json
+
+{
+  "content": "MongoDB is really God!"
 }
 
 ###
 # Delete note
-DELETE http://localhost:4000/api/notes/4
+DELETE {{baseUrl}}/api/notes/6a6bb2b764b2cb650da33fc5
 
 ###
 # Unknown endpoint
-GET http://localhost:4000/note/info
+GET {{baseUrl}}/note/info
